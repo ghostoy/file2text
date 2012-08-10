@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Image to Text</title>
+	<script src="image2text.js"></script>
+</head>
+<body>
+	<input type="file" id="image_file" onchange="getText(this.files)"/><br/>
+	<textarea id="output" rows="5" cols="50"></textarea>
+	<script>
+		function getText(files) {
+			if (files.length) {
+				image2text(files[0], function(text) {
+					document.getElementById('output').value = text;
+				}, function(e){
+					document.getElementById('output').value = e;
+				});
+			}
+		}
+	</script>
+</body>
+</html>
