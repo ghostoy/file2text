@@ -1,4 +1,4 @@
-function image2text(file, callback, error) {
+function file2text(file, callback, error) {
 	var reader = new FileReader();
 
 	reader.onload = function(e) {

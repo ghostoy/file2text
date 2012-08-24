@@ -2,17 +2,17 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Image to Text</title>
-	<script src="image2text.js"></script>
+	<title>File to Text</title>
+	<script src="file2text.js"></script>
 </head>
 <body>
-	<input type="file" id="image_file" onchange="getText(this.files)"/><br/>
+	<input type="file" onchange="getText(this.files)"/><br/>
 	<textarea id="output" rows="5" cols="50"></textarea><br/>
 	<img id="img"/>
 	<script>
 		function getText(files) {
 			if (files.length) {
-				image2text(files[0], function(text, type) {
+				file2text(files[0], function(text, type) {
 					document.getElementById('output').value = text;
 					if (/^image\//.test(type)) {
 						document.getElementById('img').src = text;
